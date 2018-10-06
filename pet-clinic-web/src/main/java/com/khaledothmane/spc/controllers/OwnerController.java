@@ -1,14 +1,15 @@
 package com.khaledothmane.spc.controllers;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping({"/vets"})
+@RequestMapping({"/owners"})
 @Controller
-public class VetController {
+public class OwnerController {
 
     @RequestMapping({"", "/", "/index.html"})
-    public String listVets() {
-        return "vets/index";
+    public String ownersList() {
+        return "owners/index";
     }
 }
