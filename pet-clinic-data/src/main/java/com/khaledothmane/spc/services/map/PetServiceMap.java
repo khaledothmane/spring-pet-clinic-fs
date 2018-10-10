@@ -2,12 +2,15 @@ package com.khaledothmane.spc.services.map;
 
 import com.khaledothmane.spc.model.Pet;
 import com.khaledothmane.spc.services.CrudService;
+import com.khaledothmane.spc.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
@@ -21,19 +24,16 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
 
     @Override
     public Pet save(Pet object) {
-
         return super.save(object.getId(), object);
     }
 
     @Override
     public void delete(Pet object) {
-
         super.delete(object);
     }
 
     @Override
     public void deleteById(Long id) {
-
         super.deleteById(id);
     }
 }

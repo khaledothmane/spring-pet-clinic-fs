@@ -2,10 +2,13 @@ package com.khaledothmane.spc.services.map;
 
 import com.khaledothmane.spc.model.Owner;
 import com.khaledothmane.spc.services.CrudService;
+import com.khaledothmane.spc.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+@Service
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
