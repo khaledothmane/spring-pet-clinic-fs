@@ -32,7 +32,7 @@ public class InitData implements CommandLineRunner {
         Owner owner2 = new Owner();
         owner2.setId(2L);
         owner2.setFirstName("John");
-        owner1.setLastName("Fair");
+        owner2.setLastName("Fair");
         ownerService.save(owner2);
 
         System.out.println("######## Owners Loaded");
