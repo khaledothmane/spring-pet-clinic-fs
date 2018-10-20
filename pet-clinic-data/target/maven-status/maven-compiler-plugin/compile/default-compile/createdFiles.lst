@@ -1,5 +1,14 @@
-com/khaledothmane/spc/model/Person.class
-com/khaledothmane/spc/model/Pet.class
+com/khaledothmane/spc/services/OwnerService.class
+com/khaledothmane/spc/services/map/OwnerServiceMap.class
+com/khaledothmane/spc/services/map/AbstractMapService.class
+com/khaledothmane/spc/services/map/VetServiceMap.class
 com/khaledothmane/spc/model/Vet.class
 com/khaledothmane/spc/model/Owner.class
+com/khaledothmane/spc/services/map/PetServiceMap.class
+com/khaledothmane/spc/model/Person.class
+com/khaledothmane/spc/model/BaseEntity.class
+com/khaledothmane/spc/services/CrudService.class
+com/khaledothmane/spc/model/Pet.class
+com/khaledothmane/spc/services/VetService.class
 com/khaledothmane/spc/model/PetType.class
+com/khaledothmane/spc/services/PetService.class
