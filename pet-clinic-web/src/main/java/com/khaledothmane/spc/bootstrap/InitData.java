@@ -1,8 +1,10 @@
 package com.khaledothmane.spc.bootstrap;
 
 import com.khaledothmane.spc.model.Owner;
+import com.khaledothmane.spc.model.PetType;
 import com.khaledothmane.spc.model.Vet;
 import com.khaledothmane.spc.services.OwnerService;
+import com.khaledothmane.spc.services.PetTypeService;
 import com.khaledothmane.spc.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,15 +15,27 @@ public class InitData implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
     @Autowired
-    public InitData(OwnerService ownerService, VetService vetService) {
+    public InitData(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType snake = new PetType();
+        snake.setName("Snake");
+        petTypeService.save(snake);
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        petTypeService.save(dog);
+
+        System.out.println("######## PetTypes Loaded");
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Tyres");

@@ -2,9 +2,11 @@ package com.khaledothmane.spc.services.map;
 
 import com.khaledothmane.spc.model.PetType;
 import com.khaledothmane.spc.services.PetTypeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
