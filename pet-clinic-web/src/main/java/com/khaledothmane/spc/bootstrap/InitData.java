@@ -1,11 +1,9 @@
 package com.khaledothmane.spc.bootstrap;
 
-import com.khaledothmane.spc.model.Owner;
-import com.khaledothmane.spc.model.Pet;
-import com.khaledothmane.spc.model.PetType;
-import com.khaledothmane.spc.model.Vet;
+import com.khaledothmane.spc.model.*;
 import com.khaledothmane.spc.services.OwnerService;
 import com.khaledothmane.spc.services.PetTypeService;
+import com.khaledothmane.spc.services.SpecialityService;
 import com.khaledothmane.spc.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -17,17 +15,24 @@ public class InitData implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialityService specialityService;
 
     @Autowired
-    public InitData(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public InitData(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialityService = specialityService;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
+        int count = petTypeService.findAll().size();
+        if (count == 0) loadInitData();
+    }
+
+    private void loadInitData() {
         PetType snake = new PetType();
         snake.setName("Snake");
         petTypeService.save(snake);
@@ -68,14 +73,30 @@ public class InitData implements CommandLineRunner {
 
         System.out.println("######## Owners Loaded");
 
+        Speciality psychiatry = new Speciality();
+        psychiatry.setDescription("Psychiatry");
+        specialityService.save(psychiatry);
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("Surgery");
+        specialityService.save(surgery);
+
+        Speciality dermatology = new Speciality();
+        dermatology.setDescription("Dermatology");
+        specialityService.save(dermatology);
+
+
         Vet vet1 = new Vet();
         vet1.setFirstName("Franklin");
         vet1.setLastName("Olivero");
+        vet1.getSpecialities().add(psychiatry);
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Jack");
         vet2.setLastName("Newborn");
+        vet2.getSpecialities().add(surgery);
+        vet2.getSpecialities().add(dermatology);
         vetService.save(vet2);
 
         System.out.println("######## Vets Loaded");
