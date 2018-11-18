@@ -1,7 +1,6 @@
 package com.khaledothmane.spc.services.map;
 
 import com.khaledothmane.spc.model.Owner;
-import com.khaledothmane.spc.services.CrudService;
 import com.khaledothmane.spc.services.OwnerService;
 import com.khaledothmane.spc.services.PetService;
 import com.khaledothmane.spc.services.PetTypeService;
