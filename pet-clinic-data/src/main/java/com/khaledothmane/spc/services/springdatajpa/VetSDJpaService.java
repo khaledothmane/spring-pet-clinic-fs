@@ -28,21 +28,21 @@ public class VetSDJpaService implements VetService {
 
     @Override
     public Vet findById(Long aLong) {
-        return null;
+        return vetRepository.findById(aLong).orElse(null);
     }
 
     @Override
     public Vet save(Vet object) {
-        return null;
+        return vetRepository.save(object);
     }
 
     @Override
     public void delete(Vet object) {
-
+        vetRepository.delete(object);
     }
 
     @Override
     public void deleteById(Long aLong) {
-
+        vetRepository.deleteById(aLong);
     }
 }
