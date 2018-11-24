@@ -2,11 +2,13 @@ package com.khaledothmane.spc.services.map;
 
 import com.khaledothmane.spc.model.PetType;
 import com.khaledothmane.spc.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "mapservice"})
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override

@@ -1,36 +1,36 @@
 package com.khaledothmane.spc.services.map;
 
-import com.khaledothmane.spc.model.Pet;
-import com.khaledothmane.spc.services.CrudService;
-import com.khaledothmane.spc.services.PetService;
+import com.khaledothmane.spc.model.Visit;
+import com.khaledothmane.spc.services.VisitService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 @Service
 @Profile({"default", "mapservice"})
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
+public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
-    public Set<Pet> findAll() {
+    public Set<Visit> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Visit findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public Visit save(Visit object) {
+            if (object.getPet().getId() == null || object.getPet().getOwner().getId() == null) {
+                throw new RuntimeException("Invalid Visit Object");
+            }
         return super.save(object);
     }
 
     @Override
-    public void delete(Pet object) {
+    public void delete(Visit object) {
         super.delete(object);
     }
 

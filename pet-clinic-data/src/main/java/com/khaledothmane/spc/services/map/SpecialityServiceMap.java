@@ -2,11 +2,14 @@ package com.khaledothmane.spc.services.map;
 
 import com.khaledothmane.spc.model.Speciality;
 import com.khaledothmane.spc.services.SpecialityService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "mapservice"})
+
 public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
 
     @Override

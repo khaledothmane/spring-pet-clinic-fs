@@ -1,13 +1,13 @@
 package com.khaledothmane.spc.bootstrap;
 
 import com.khaledothmane.spc.model.*;
-import com.khaledothmane.spc.services.OwnerService;
-import com.khaledothmane.spc.services.PetTypeService;
-import com.khaledothmane.spc.services.SpecialityService;
-import com.khaledothmane.spc.services.VetService;
+import com.khaledothmane.spc.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
+import java.time.Month;
 
 @Component // To be registered into the Spring Context
 public class InitData implements CommandLineRunner {
@@ -16,13 +16,15 @@ public class InitData implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     @Autowired
-    public InitData(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public InitData(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -72,6 +74,12 @@ public class InitData implements CommandLineRunner {
         ownerService.save(owner2);
 
         System.out.println("######## Owners Loaded");
+
+        Visit visitSnake = new Visit();
+        visitSnake.setPet(petSnake);
+        visitSnake.setDate(LocalDate.of(2018, Month.DECEMBER, 20));
+        visitSnake.setDescription("Visiting my snake :)");
+        visitService.save(visitSnake);
 
         Speciality psychiatry = new Speciality();
         psychiatry.setDescription("Psychiatry");
