@@ -2,6 +2,7 @@ package com.khaledothmane.spc.bootstrap;
 
 import com.khaledothmane.spc.model.*;
 import com.khaledothmane.spc.services.*;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -71,6 +72,12 @@ public class InitData implements CommandLineRunner {
         owner2.setPhone("+1 646-455-0952");
         petDog.setOwner(owner2);
         owner2.getPets().add(petDog);
+        ownerService.save(owner2);
+
+        //TODO: bidirectional mapping using builder
+        Owner owner3 = Owner.builder().firstName("John").lastName("Fair").address("South cost - Harlem")
+                .city("New York").phone("+1 646-455-0952").build();
+
         ownerService.save(owner2);
 
         System.out.println("######## Owners Loaded");

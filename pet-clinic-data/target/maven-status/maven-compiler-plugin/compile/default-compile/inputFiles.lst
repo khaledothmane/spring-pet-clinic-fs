@@ -17,7 +17,10 @@
 /Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/repositories/VetRepository.java
 /Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/services/map/SpecialityServiceMap.java
 /Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/services/PetTypeService.java
+/Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/services/springdatajpa/VisitSDJpaService.java
+/Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/services/map/VisitMapService.java
 /Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/model/PetType.java
+/Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/services/VisitService.java
 /Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/repositories/PetRepository.java
 /Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/services/springdatajpa/VetSDJpaService.java
 /Users/otman/Documents/Spring/spring-5/spring-pet-clinic-fs/pet-clinic-data/src/main/java/com/khaledothmane/spc/model/Owner.java
